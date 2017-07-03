@@ -20,6 +20,20 @@ Via `go get`:
 $ go get github.com/tj/gh-polls/cmd/polls
 ```
 
+## Usage
+
+Create a new poll for who is the best ferret.
+
+```
+$ polls new Tobi Loki Jane
+```
+
+Create a new poll with larger options.
+
+```
+$ polls new "Cats are better" "Ferrets are better"
+```
+
 ---
 
 [![GoDoc](https://godoc.org/github.com/tj/gh-polls?status.svg)](https://godoc.org/github.com/tj/gh-polls)
