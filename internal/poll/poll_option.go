@@ -26,7 +26,7 @@ var option = `<svg width="448px" height="58px" viewBox="0 0 448 58" version="1.1
                       fill="freeze"
                       calcMode="spline"
                       keyTimes="0; 1"
-                      keySplines="0.3, 0.61, 0.355, 1.2" />
+                      keySplines="0.3, 0.61, 0.355, 1.05" />
                 </rect>
                 <text id="100%" font-family="{{.FontFamily}}" font-size="12" font-weight="normal" letter-spacing="1.857333" fill="#212529">
                     <tspan x="344" y="30">{{.Percent}}%</tspan>
