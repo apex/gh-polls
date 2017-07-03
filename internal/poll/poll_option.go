@@ -24,7 +24,9 @@ var option = `<svg width="448px" height="58px" viewBox="0 0 448 58" version="1.1
                     <tspan x="0" y="12">{{.Name}}</tspan>
                 </text>
                 <text id="150" font-family="{{.FontFamily}}" font-size="12" font-weight="normal" letter-spacing="1" fill="#868E96">
-                    <tspan x="386" y="30">{{.Votes}}</tspan>
+										{{if .Votes}}
+										<tspan x="386" y="30">{{.Votes}}</tspan>
+										{{end}}
                 </text>
             </g>
         </g>
