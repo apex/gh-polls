@@ -12,6 +12,14 @@ These polls work by pasting individual markdown SVG images into your issue, each
 
 What do they look like? The poll above is live, click one out and give it a try! Please don't abuse it or I'll have to take it down :).
 
+## Installation
+
+Via `go get`:
+
+```
+$ go get github.com/tj/gh-polls/cmd/polls
+```
+
 ---
 
 [![GoDoc](https://godoc.org/github.com/tj/gh-polls?status.svg)](https://godoc.org/github.com/tj/gh-polls)
