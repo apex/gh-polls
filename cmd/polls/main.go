@@ -62,7 +62,7 @@ func main() {
 		var buf bytes.Buffer
 
 		for _, o := range *options {
-			fmt.Fprintf(&buf, link(out.ID, o))
+			fmt.Fprintln(&buf, link(out.ID, o))
 		}
 
 		if err := clipboard.WriteAll(buf.String()); err == nil {
