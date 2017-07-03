@@ -1,4 +1,5 @@
 build:
+  main: cmd/polls/main.go
   binary: polls
   goos:
     - windows
