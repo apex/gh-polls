@@ -11,7 +11,7 @@ import (
 	"github.com/gohttp/response"
 	"github.com/segmentio/go-env"
 
-	"github.com/tj/gh-polls/poll"
+	"github.com/tj/gh-polls/internal/poll"
 )
 
 func main() {
