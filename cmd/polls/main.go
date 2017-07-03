@@ -2,16 +2,15 @@ package main
 
 import (
 	"bytes"
-	"encoding/json"
 	"fmt"
 	"io"
 	"log"
-	"net/http"
 	"net/url"
 	"os"
 
 	"github.com/atotto/clipboard"
 
+	"github.com/tj/gh-polls/client"
 	"github.com/tj/kingpin"
 )
 
@@ -20,15 +19,6 @@ var (
 	version  = "master"
 	endpoint = "https://m131jyck4m.execute-api.us-west-2.amazonaws.com/prod"
 )
-
-// TODO: move all this stuff into a pkg
-type input struct {
-	Options []string `json:"options"`
-}
-
-type output struct {
-	ID string `json:"id"`
-}
 
 func main() {
 	app := kingpin.New("polls", "GitHub polls.")
@@ -41,22 +31,16 @@ func main() {
 
 	switch kingpin.MustParse(app.Parse(os.Args[1:])) {
 	case create.FullCommand():
-		// TODO: move all this stuff into a pkg
-
-		b, err := json.Marshal(input{Options: *options})
-		if err != nil {
-			log.Fatalf("error marshaling: %s", err)
+		polls := client.Client{
+			Endpoint: endpoint,
 		}
 
-		res, err := http.Post(endpoint+"/poll", "application/json", bytes.NewReader(b))
-		if err != nil {
-			log.Fatalf("error requesting: %s", err)
-		}
-		defer res.Body.Close()
+		out, err := polls.Create(&client.CreateInput{
+			Options: *options,
+		})
 
-		var out output
-		if err := json.NewDecoder(res.Body).Decode(&out); err != nil {
-			log.Fatalf("error unmarshaling resonse: %s", err)
+		if err != nil {
+			log.Fatalf("error creating poll: %s", err)
 		}
 
 		var buf bytes.Buffer
