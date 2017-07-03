@@ -12,11 +12,11 @@ import (
 	"github.com/tj/kingpin"
 )
 
-// version of polls.
-var version = "0.0.1"
-
-// endpoint for polls.
-var endpoint = "https://m131jyck4m.execute-api.us-west-2.amazonaws.com/prod"
+// Config.
+var (
+	version  = "master"
+	endpoint = "https://m131jyck4m.execute-api.us-west-2.amazonaws.com/prod"
+)
 
 // TODO: move all this stuff into a pkg
 type input struct {
