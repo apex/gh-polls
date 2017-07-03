@@ -10,7 +10,7 @@ User polls for GitHub powered by [Up](https://github.com/apex/up).
 
 These polls work by pasting individual markdown SVG images into your issue, each wrapped with a link that tracks a vote. A single vote per IP is allowed for a given poll, which are stored in DynamoDB.
 
-What do they look like? The poll above is live, click one out and give it a try! Please don't abuse it or I'll have to take it down :), and I will find you.
+What do they look like? The poll above is live, click one out and give it a try!
 
 ## Installation
 
