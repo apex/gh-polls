@@ -1,9 +1,29 @@
 package cli
 
 import (
+	"bytes"
 	"fmt"
+	"io"
 	"net/url"
+	"os"
+
+	"github.com/atotto/clipboard"
 )
+
+// OutputOptions outputs markdown options and copies to the clipboard.
+func OutputOptions(id string, options []string) {
+	var buf bytes.Buffer
+
+	for _, o := range options {
+		fmt.Fprintln(&buf, Link(id, o))
+	}
+
+	if err := clipboard.WriteAll(buf.String()); err == nil {
+		fmt.Fprintln(os.Stderr, "Copied to clipboard!")
+	}
+
+	io.Copy(os.Stdout, &buf)
+}
 
 // Link returns a poll option link with image.
 func Link(id, option string) string {

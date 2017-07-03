@@ -1,17 +1,13 @@
 package main
 
 import (
-	"bytes"
-	"fmt"
-	"io"
 	"log"
 	"os"
 
-	"github.com/atotto/clipboard"
+	"github.com/tj/kingpin"
 
 	"github.com/tj/gh-polls/internal/cli"
 	"github.com/tj/gh-polls/internal/client"
-	"github.com/tj/kingpin"
 )
 
 // Config.
@@ -43,16 +39,6 @@ func main() {
 			log.Fatalf("error creating poll: %s", err)
 		}
 
-		var buf bytes.Buffer
-
-		for _, o := range *options {
-			fmt.Fprintln(&buf, cli.Link(out.ID, o))
-		}
-
-		if err := clipboard.WriteAll(buf.String()); err == nil {
-			fmt.Fprintln(os.Stderr, "Copied to clipboard!")
-		}
-
-		io.Copy(os.Stdout, &buf)
+		cli.OutputOptions(out.ID, *options)
 	}
 }
