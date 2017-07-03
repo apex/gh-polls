@@ -1,6 +1,7 @@
 package main
 
 import (
+	"fmt"
 	"log"
 	"os"
 
@@ -39,6 +40,10 @@ func main() {
 			log.Fatalf("error creating poll: %s", err)
 		}
 
-		cli.OutputOptions(out.ID, *options)
+		if err := cli.CopyToClipboard(out.ID, *options); err != nil {
+			log.Fatalf("error copying to clipboard: %s", err)
+		}
+
+		fmt.Printf("Copied markdown for poll %s to the clipboard!\n", out.ID)
 	}
 }

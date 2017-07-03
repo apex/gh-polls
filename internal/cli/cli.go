@@ -3,15 +3,13 @@ package cli
 import (
 	"bytes"
 	"fmt"
-	"io"
 	"net/url"
-	"os"
 
 	"github.com/atotto/clipboard"
 )
 
-// OutputOptions outputs markdown options and copies to the clipboard.
-func OutputOptions(id string, options []string) {
+// CopyToClipboard outputs markdown options and copies to the clipboard.
+func CopyToClipboard(id string, options []string) error {
 	var buf bytes.Buffer
 
 	for _, o := range options {
@@ -19,10 +17,10 @@ func OutputOptions(id string, options []string) {
 	}
 
 	if err := clipboard.WriteAll(buf.String()); err == nil {
-		fmt.Fprintln(os.Stderr, "Copied to clipboard!")
+		return err
 	}
 
-	io.Copy(os.Stdout, &buf)
+	return nil
 }
 
 // Link returns a poll option link with image.
