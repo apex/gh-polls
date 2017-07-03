@@ -82,6 +82,13 @@ func getPollOptionVote(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
+	// if url := r.Header.Get("Referer"); url != "" {
+	// 	log.WithField("url", url).Info("redirect")
+	// 	w.Header().Set("Location", url)
+	// 	response.Found(w, "Voted!")
+	// 	return
+	// }
+
 	response.OK(w, "Voted!")
 }
 

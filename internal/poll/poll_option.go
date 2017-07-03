@@ -16,7 +16,18 @@ var option = `<svg width="448px" height="58px" viewBox="0 0 448 58" version="1.1
         <g id="poll">
             <g id="Group" transform="translate(17.000000, 10.000000)">
                 <rect id="Rectangle" fill="#F1F3F5" x="0" y="19" width="334" height="14" rx="2"></rect>
-                <rect id="Rectangle" fill="#7950F2" x="0" y="19" width="{{.Width}}" height="14" rx="2"></rect>
+                <rect id="Rectangle" fill="#7950F2" x="0" y="19" width="0" height="14" rx="2">
+                  <animate attributeName="width"
+                      begin="0.5s"
+                      dur="600ms"
+                      from="0"
+                      to="{{.Width}}"
+                      repeatCount="1"
+                      fill="freeze"
+                      calcMode="spline"
+                      keyTimes="0; 1"
+                      keySplines="0.3, 0.61, 0.355, 1.2" />
+                </rect>
                 <text id="100%" font-family="{{.FontFamily}}" font-size="12" font-weight="normal" letter-spacing="1.857333" fill="#212529">
                     <tspan x="344" y="30">{{.Percent}}%</tspan>
                 </text>
@@ -24,14 +35,15 @@ var option = `<svg width="448px" height="58px" viewBox="0 0 448 58" version="1.1
                     <tspan x="0" y="12">{{.Name}}</tspan>
                 </text>
                 <text id="150" font-family="{{.FontFamily}}" font-size="12" font-weight="normal" letter-spacing="1" fill="#868E96">
-										{{if .Votes}}
-										<tspan x="386" y="30">{{.Votes}}</tspan>
-										{{end}}
+                    {{if .Votes}}
+                      <tspan x="386" y="30">{{.Votes}}</tspan>
+                    {{end}}
                 </text>
             </g>
         </g>
     </g>
-</svg>`
+</svg>
+`
 
 // Option represents a single poll option.
 type Option struct {
