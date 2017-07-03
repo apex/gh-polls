@@ -20,7 +20,7 @@ var endpoint = "https://m131jyck4m.execute-api.us-west-2.amazonaws.com/prod"
 
 // TODO: move all this stuff into a pkg
 type input struct {
-	Options []string `json:"body"`
+	Options []string `json:"options"`
 }
 
 type output struct {
