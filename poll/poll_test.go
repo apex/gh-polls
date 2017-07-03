@@ -10,40 +10,42 @@ import (
 // TODO: omit voters on load
 
 func TestPoll_Vote(t *testing.T) {
-	p := Poll{
-		ID: "foo",
-	}
+	p := New("tobi", []string{"Option A", "Option B"})
+	defer p.Remove()
+
+	assert.NotEmpty(t, p.ID, "id missing")
 
 	t.Run("has not voted", func(t *testing.T) {
 		assert.NoError(t, p.Remove(), "remove")
-		assert.NoError(t, p.Create([]string{"Something"}), "create")
+		assert.NoError(t, p.Create(), "create")
 
-		assert.NoError(t, p.Vote("tobi", "Something"), "vote")
-		assert.NoError(t, p.Vote("loki", "Something"), "vote")
+		assert.NoError(t, p.Vote("tobi", "Option A"), "vote")
+		assert.NoError(t, p.Vote("loki", "Option A"), "vote")
 
 		assert.NoError(t, p.Load(), "load")
-		assert.Equal(t, "foo", p.ID)
 		assert.Equal(t, 2, p.Votes, "votes")
 		assert.Equal(t, []string{"loki", "tobi"}, p.Voters)
 	})
 
 	t.Run("has voted", func(t *testing.T) {
 		assert.NoError(t, p.Remove(), "remove")
-		assert.NoError(t, p.Create([]string{"Something", "Another"}), "create")
+		assert.NoError(t, p.Create(), "create")
 
-		assert.NoError(t, p.Vote("tobi", "Something"), "vote")
-		assert.Equal(t, ErrAlreadyVoted, p.Vote("tobi", "Something"))
-		assert.Equal(t, ErrAlreadyVoted, p.Vote("tobi", "Another"))
+		// tobi tries three times! abuse!
+		assert.NoError(t, p.Vote("tobi", "Option A"), "vote")
+		assert.Equal(t, ErrAlreadyVoted, p.Vote("tobi", "Option A"))
+		assert.Equal(t, ErrAlreadyVoted, p.Vote("tobi", "Option B"))
 
-		assert.NoError(t, p.Vote("loki", "Another"), "vote")
-		assert.Equal(t, ErrAlreadyVoted, p.Vote("loki", "Something"))
+		// loki tries twice
+		assert.NoError(t, p.Vote("loki", "Option B"), "vote")
+		assert.Equal(t, ErrAlreadyVoted, p.Vote("loki", "Option A"))
 
-		assert.NoError(t, p.Vote("jane", "Something"), "vote")
+		// jane is cool
+		assert.NoError(t, p.Vote("jane", "Option B"), "vote")
 
 		assert.NoError(t, p.Load(), "load")
-		assert.Equal(t, "foo", p.ID)
 		assert.Equal(t, 3, p.Votes, "votes")
 		assert.Equal(t, []string{"jane", "loki", "tobi"}, p.Voters)
-		assert.Equal(t, map[string]int{"Another": 1, "Something": 2}, p.Options)
+		assert.Equal(t, map[string]int{"Option A": 1, "Option B": 2}, p.Options)
 	})
 }

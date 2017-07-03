@@ -27,7 +27,7 @@ func main() {
 
 // addPoll creates a poll, responds with .id.
 func addPoll(w http.ResponseWriter, r *http.Request) {
-	p := poll.New()
+	user := r.Header.Get("X-Real-IP")
 
 	var body struct {
 		Options []string `json:"options"`
@@ -39,8 +39,9 @@ func addPoll(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	err := p.Create(body.Options)
-	if err != nil {
+	p := poll.New(user, body.Options)
+
+	if err := p.Create(); err != nil {
 		log.WithError(err).Error("creating poll")
 		response.InternalServerError(w)
 		return

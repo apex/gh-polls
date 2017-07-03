@@ -34,23 +34,27 @@ func newID() string {
 // Poll represents a poll and its options.
 type Poll struct {
 	ID      string         `json:"id"`
+	User    string         `json:"user"`
 	Votes   int            `json:"votes"`
 	Voters  []string       `json:"voters"`
 	Options map[string]int `json:"options"`
+	options []string
 }
 
-// New poll.
-func New() *Poll {
+// New poll for the given user and options.
+func New(user string, options []string) *Poll {
 	return &Poll{
-		ID: newID(),
+		ID:      newID(),
+		User:    user,
+		options: options,
 	}
 }
 
 // Create the poll.
-func (p *Poll) Create(options []string) error {
+func (p *Poll) Create() error {
 	opts := map[string]*dynamodb.AttributeValue{}
 
-	for _, name := range options {
+	for _, name := range p.options {
 		opts[name] = &dynamodb.AttributeValue{
 			N: aws.String("0"),
 		}
@@ -59,6 +63,9 @@ func (p *Poll) Create(options []string) error {
 	item := map[string]*dynamodb.AttributeValue{
 		"id": {
 			S: &p.ID,
+		},
+		"user": {
+			S: &p.User,
 		},
 		"options": {
 			M: opts,
