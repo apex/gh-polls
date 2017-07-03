@@ -14,17 +14,17 @@ var fontFamily = `-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu
 var option = `<svg width="448px" height="62px" viewBox="0 0 448 62" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
     <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
         <g id="poll">
-            <g id="Group" transform="translate(29.000000, 15.000000)">
-                <rect id="Rectangle" fill="#F1F3F5" x="0" y="19" width="188" height="14" rx="2"></rect>
+            <g id="Group" transform="translate(17.000000, 14.000000)">
+                <rect id="Rectangle" fill="#F1F3F5" x="0" y="19" width="334" height="14" rx="2"></rect>
                 <rect id="Rectangle" fill="#7950F2" x="0" y="19" width="{{.Width}}" height="14" rx="2"></rect>
                 <text id="100%" font-family="{{.FontFamily}}" font-size="12" font-weight="normal" letter-spacing="1.857333" fill="#212529">
-                    <tspan x="199" y="30">{{.Percent}}%</tspan>
+                    <tspan x="344" y="30">{{.Percent}}%</tspan>
                 </text>
-                <text id="Option-A" font-family="{{.FontFamily}}" font-size="12" font-weight="normal" letter-spacing="1" fill="#212529">
+                <text id="Option-A" font-family="{{.FontFamily}}" font-size="12" font-weight="bold" letter-spacing="1" fill="#212529">
                     <tspan x="0" y="12">{{.Name}}</tspan>
                 </text>
-                <text id="150-votes" font-family="{{.FontFamily}}" font-size="12" font-weight="normal" letter-spacing="1" fill="#868E96">
-                    <tspan x="243" y="30">{{.Votes}} votes</tspan>
+                <text id="150" font-family="{{.FontFamily}}" font-size="12" font-weight="normal" letter-spacing="1" fill="#868E96">
+                    <tspan x="386" y="30">{{.Votes}}</tspan>
                 </text>
             </g>
         </g>

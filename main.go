@@ -112,7 +112,7 @@ func getPollOption(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	barWidth := 188
+	barWidth := 334
 	percent := 0
 	width := 0
 
