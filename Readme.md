@@ -28,11 +28,18 @@ Create a new poll for who is the best ferret.
 $ polls new Tobi Loki Jane
 ```
 
+[![](https://m131jyck4m.execute-api.us-west-2.amazonaws.com/prod/poll/01BM2Z07AGE7KBMK8T2RFJCBWY/Tobi)](https://m131jyck4m.execute-api.us-west-2.amazonaws.com/prod/poll/01BM2Z07AGE7KBMK8T2RFJCBWY/Tobi/vote)
+[![](https://m131jyck4m.execute-api.us-west-2.amazonaws.com/prod/poll/01BM2Z07AGE7KBMK8T2RFJCBWY/Loki)](https://m131jyck4m.execute-api.us-west-2.amazonaws.com/prod/poll/01BM2Z07AGE7KBMK8T2RFJCBWY/Loki/vote)
+[![](https://m131jyck4m.execute-api.us-west-2.amazonaws.com/prod/poll/01BM2Z07AGE7KBMK8T2RFJCBWY/Jane)](https://m131jyck4m.execute-api.us-west-2.amazonaws.com/prod/poll/01BM2Z07AGE7KBMK8T2RFJCBWY/Jane/vote)
+
 Create a new poll with larger options.
 
 ```
 $ polls new "Cats are better" "Ferrets are better"
 ```
+
+[![](https://m131jyck4m.execute-api.us-west-2.amazonaws.com/prod/poll/01BM2Z0HTHT9P5TXGREGP1T29F/Cats%20are%20better)](https://m131jyck4m.execute-api.us-west-2.amazonaws.com/prod/poll/01BM2Z0HTHT9P5TXGREGP1T29F/Cats%20are%20better/vote)
+[![](https://m131jyck4m.execute-api.us-west-2.amazonaws.com/prod/poll/01BM2Z0HTHT9P5TXGREGP1T29F/Ferrets%20are%20better)](https://m131jyck4m.execute-api.us-west-2.amazonaws.com/prod/poll/01BM2Z0HTHT9P5TXGREGP1T29F/Ferrets%20are%20better/vote)
 
 ---
 

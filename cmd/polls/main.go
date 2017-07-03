@@ -6,6 +6,7 @@ import (
 	"fmt"
 	"log"
 	"net/http"
+	"net/url"
 	"os"
 
 	"github.com/tj/kingpin"
@@ -17,7 +18,7 @@ var version = "0.0.1"
 // endpoint for polls.
 var endpoint = "https://m131jyck4m.execute-api.us-west-2.amazonaws.com/prod"
 
-// TODO: move this stuff to some client lib.
+// TODO: move all this stuff into a pkg
 type input struct {
 	Options []string `json:"body"`
 }
@@ -37,6 +38,8 @@ func main() {
 
 	switch kingpin.MustParse(app.Parse(os.Args[1:])) {
 	case create.FullCommand():
+		// TODO: move all this stuff into a pkg
+
 		b, err := json.Marshal(input{Options: *options})
 		if err != nil {
 			log.Fatalf("error marshaling: %s", err)
@@ -53,6 +56,16 @@ func main() {
 			log.Fatalf("error unmarshaling resonse: %s", err)
 		}
 
-		fmt.Println(out.ID)
+		for _, o := range *options {
+			fmt.Println(link(out.ID, o))
+		}
 	}
+}
+
+func link(id, option string) string {
+	return fmt.Sprintf(`[%s](https://m131jyck4m.execute-api.us-west-2.amazonaws.com/prod/poll/%s/%s/vote)`, image(id, option), id, url.PathEscape(option))
+}
+
+func image(id, option string) string {
+	return fmt.Sprintf(`![](https://m131jyck4m.execute-api.us-west-2.amazonaws.com/prod/poll/%s/%s)`, id, url.PathEscape(option))
 }
