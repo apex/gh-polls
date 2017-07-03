@@ -44,17 +44,6 @@ $ polls new "Cats are cool" "Dogs are better" "Ferrets for the win"
 [![](https://m131jyck4m.execute-api.us-west-2.amazonaws.com/prod/poll/01BM2ZHPN7BA19X15SQDGX4D88/Dogs%20are%20better)](https://m131jyck4m.execute-api.us-west-2.amazonaws.com/prod/poll/01BM2ZHPN7BA19X15SQDGX4D88/Dogs%20are%20better/vote)
 [![](https://m131jyck4m.execute-api.us-west-2.amazonaws.com/prod/poll/01BM2ZHPN7BA19X15SQDGX4D88/Ferrets%20for%20the%20win)](https://m131jyck4m.execute-api.us-west-2.amazonaws.com/prod/poll/01BM2ZHPN7BA19X15SQDGX4D88/Ferrets%20for%20the%20win/vote)
 
-What feature next?
-
-```
-$ polls new Themes Animations Other
-```
-
-[![](https://m131jyck4m.execute-api.us-west-2.amazonaws.com/prod/poll/01BM31WTNW78390GQJWNEA2Y4H/Themes)](https://m131jyck4m.execute-api.us-west-2.amazonaws.com/prod/poll/01BM31WTNW78390GQJWNEA2Y4H/Themes/vote)
-[![](https://m131jyck4m.execute-api.us-west-2.amazonaws.com/prod/poll/01BM31WTNW78390GQJWNEA2Y4H/Animations)](https://m131jyck4m.execute-api.us-west-2.amazonaws.com/prod/poll/01BM31WTNW78390GQJWNEA2Y4H/Animations/vote)
-[![](https://m131jyck4m.execute-api.us-west-2.amazonaws.com/prod/poll/01BM31WTNW78390GQJWNEA2Y4H/Other)](https://m131jyck4m.execute-api.us-west-2.amazonaws.com/prod/poll/01BM31WTNW78390GQJWNEA2Y4H/Other/vote)
-
-
 ---
 
 [![GoDoc](https://godoc.org/github.com/tj/gh-polls?status.svg)](https://godoc.org/github.com/tj/gh-polls)
