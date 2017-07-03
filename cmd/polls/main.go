@@ -5,11 +5,11 @@ import (
 	"fmt"
 	"io"
 	"log"
-	"net/url"
 	"os"
 
 	"github.com/atotto/clipboard"
 
+	"github.com/tj/gh-polls/cli"
 	"github.com/tj/gh-polls/client"
 	"github.com/tj/kingpin"
 )
@@ -46,7 +46,7 @@ func main() {
 		var buf bytes.Buffer
 
 		for _, o := range *options {
-			fmt.Fprintln(&buf, link(out.ID, o))
+			fmt.Fprintln(&buf, cli.Link(out.ID, o))
 		}
 
 		if err := clipboard.WriteAll(buf.String()); err == nil {
@@ -55,12 +55,4 @@ func main() {
 
 		io.Copy(os.Stdout, &buf)
 	}
-}
-
-func link(id, option string) string {
-	return fmt.Sprintf(`[%s](https://m131jyck4m.execute-api.us-west-2.amazonaws.com/prod/poll/%s/%s/vote)`, image(id, option), id, url.PathEscape(option))
-}
-
-func image(id, option string) string {
-	return fmt.Sprintf(`![](https://m131jyck4m.execute-api.us-west-2.amazonaws.com/prod/poll/%s/%s)`, id, url.PathEscape(option))
 }
