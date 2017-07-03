@@ -4,10 +4,13 @@ import (
 	"bytes"
 	"encoding/json"
 	"fmt"
+	"io"
 	"log"
 	"net/http"
 	"net/url"
 	"os"
+
+	"github.com/atotto/clipboard"
 
 	"github.com/tj/kingpin"
 )
@@ -56,9 +59,17 @@ func main() {
 			log.Fatalf("error unmarshaling resonse: %s", err)
 		}
 
+		var buf bytes.Buffer
+
 		for _, o := range *options {
-			fmt.Println(link(out.ID, o))
+			fmt.Fprintf(&buf, link(out.ID, o))
 		}
+
+		if err := clipboard.WriteAll(buf.String()); err == nil {
+			fmt.Fprintln(os.Stderr, "Copied to clipboard!")
+		}
+
+		io.Copy(os.Stdout, &buf)
 	}
 }
 
