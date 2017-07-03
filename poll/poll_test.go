@@ -6,8 +6,7 @@ import (
 	"github.com/tj/assert"
 )
 
-// TODO: show count in svg
-// TODO: omit voters on load
+// TODO: omit voters from load
 
 func TestPoll_Vote(t *testing.T) {
 	p := New("tobi", []string{"Option A", "Option B"})
