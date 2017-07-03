@@ -20,6 +20,8 @@ Via `go get`:
 $ go get github.com/tj/gh-polls/cmd/polls
 ```
 
+Then create your own poll with `polls new`, the markdown is copied to your clipboard.
+
 ## Usage
 
 Create a new poll for who is the best ferret.
