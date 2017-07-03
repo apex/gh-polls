@@ -9,8 +9,8 @@ import (
 
 	"github.com/atotto/clipboard"
 
-	"github.com/tj/gh-polls/cli"
-	"github.com/tj/gh-polls/client"
+	"github.com/tj/gh-polls/internal/cli"
+	"github.com/tj/gh-polls/internal/client"
 	"github.com/tj/kingpin"
 )
 
