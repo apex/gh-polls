@@ -1,6 +1,6 @@
 # GitHub Polls
 
-User polls for GitHub powered by [Up](github.com/apex/up).
+User polls for GitHub powered by [Up](https://github.com/apex/up).
 
 [![](https://m131jyck4m.execute-api.us-west-2.amazonaws.com/prod/poll/01BM2T00TMSDTZWJ1RP6TQF200/Option%20A)](https://m131jyck4m.execute-api.us-west-2.amazonaws.com/prod/poll/01BM2T00TMSDTZWJ1RP6TQF200/Option%20A/vote)
 [![](https://m131jyck4m.execute-api.us-west-2.amazonaws.com/prod/poll/01BM2T00TMSDTZWJ1RP6TQF200/Option%20B)](https://m131jyck4m.execute-api.us-west-2.amazonaws.com/prod/poll/01BM2T00TMSDTZWJ1RP6TQF200/Option%20B/vote)
