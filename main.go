@@ -82,14 +82,7 @@ func getPollOptionVote(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	// if url := r.Header.Get("Referer"); url != "" {
-	// 	log.WithField("url", url).Info("redirect")
-	// 	w.Header().Set("Location", url)
-	// 	response.Found(w, "Voted!")
-	// 	return
-	// }
-
-	response.OK(w, "Voted!")
+	http.ServeFile(w, r, "static/voted.html")
 }
 
 // getPollOption responds with a poll option svg.
