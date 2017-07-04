@@ -44,6 +44,12 @@ $ polls new "Cats are cool" "Dogs are better" "Ferrets for the win"
 [![](https://m131jyck4m.execute-api.us-west-2.amazonaws.com/prod/poll/01BM2ZHPN7BA19X15SQDGX4D88/Dogs%20are%20better)](https://m131jyck4m.execute-api.us-west-2.amazonaws.com/prod/poll/01BM2ZHPN7BA19X15SQDGX4D88/Dogs%20are%20better/vote)
 [![](https://m131jyck4m.execute-api.us-west-2.amazonaws.com/prod/poll/01BM2ZHPN7BA19X15SQDGX4D88/Ferrets%20for%20the%20win)](https://m131jyck4m.execute-api.us-west-2.amazonaws.com/prod/poll/01BM2ZHPN7BA19X15SQDGX4D88/Ferrets%20for%20the%20win/vote)
 
+## Statistics
+
+Some GitHub poll statistics powered by [Up](https://github.com/apex/up).
+
+![](https://pi2e413n19.execute-api.us-west-2.amazonaws.com/prod/timeseries)
+
 ---
 
 [![GoDoc](https://godoc.org/github.com/tj/gh-polls?status.svg)](https://godoc.org/github.com/tj/gh-polls)
