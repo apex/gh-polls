@@ -1,4 +1,5 @@
 {
   "name": "polls",
-  "description": "GitHub polls."
+  "description": "GitHub polls.",
+  "cors": {}
 }
