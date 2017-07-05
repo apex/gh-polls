@@ -22,11 +22,16 @@ func main() {
 	app.Version(version)
 
 	create := app.Command("new", "Create a new poll.")
-	options := create.Arg("options", "Poll options.").Required().Strings()
 	create.Example(`polls new Tobi Loki Jane`, "Create a new poll for who is the best ferret.")
 	create.Example(`polls new "Cats are better" "Ferrets are better"`, "Create a new poll with larger options.")
+	options := create.Arg("options", "Poll options.").Required().Strings()
+
+	versionCommand := app.Command("version", "Output program version.")
+	versionCommand.Example(`polls version`, "Show the version :).")
 
 	switch kingpin.MustParse(app.Parse(os.Args[1:])) {
+	case versionCommand.FullCommand():
+		fmt.Println(version)
 	case create.FullCommand():
 		polls := client.Client{
 			Endpoint: endpoint,
