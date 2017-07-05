@@ -40,14 +40,13 @@
       }
 
       #thanks-container {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
         background: var(--background);
         width: var(--size);
         height: var(--size);
         border-radius: 3px;
+      }
+
+      #thanks-content {
         animation: thanks 800ms var(--ease);
       }
 
@@ -65,37 +64,46 @@
         color: var(--color);
         opacity: .6;
       }
+
+      .center {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+      }
     </style>
   </head>
   <body>
     <div id="container">
-      <div id="thanks-container">
-        <svg width="60px" height="60px" viewBox="0 0 60 60" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-            <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                <g id="Artboard" transform="translate(-325.000000, -310.000000)">
-                    <g id="cat" transform="translate(325.000000, 310.000000)">
-                        <g id="Duotone" transform="translate(1.000000, 1.000000)">
-                            <polygon id="Shape" fill="#FFFFFF" fill-rule="nonzero" points="52.75 34 29.75 21.25 29.75 21.25 35.25 19 35.25 0.25 27.75 5.25 17.75 5.25 10.25 0.25 10.25 19 15.25 21 15.25 57.75 52.75 57.75 57.75 49"></polygon>
-                            <path d="M22.75,24 L15.25,21 L15.25,26 L22.75,29 L35,24 L29.75,21 L22.75,24 Z" id="Shape" fill="#E5DBFF" fill-rule="nonzero"></path>
-                            <path d="M15.25,52.75 L15.25,57.75 L52.75,57.75 L57.75,49 L52.75,49 L50.25,52.75 L15.25,52.75 Z" id="Shape" fill="#E5DBFF" fill-rule="nonzero"></path>
-                            <path d="M17.75,10.25 L17.75,12.75" id="Shape" stroke="#7048E8" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"></path>
-                            <path d="M27.75,10.25 L27.75,12.75" id="Shape" stroke="#7048E8" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"></path>
-                            <polyline id="Shape" stroke="#7048E8" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" points="15.25 57.75 6.5 57.75 0.25 51.5 6.5 42.75 1.5 37.75 5.25 32.75"></polyline>
-                            <polygon id="Shape" stroke="#7048E8" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" points="27.75 5.25 17.75 5.25 10.25 0.25 10.25 19 22.75 24 35.25 19 35.25 0.25"></polygon>
-                            <polyline id="Shape" stroke="#7048E8" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" points="15.25 21 15.25 57.75 52.75 57.75 57.75 49 52.75 34 29.75 21.25"></polyline>
-                            <path d="M30.25,57.75 L30.25,35.25" id="Shape" stroke="#7048E8" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"></path>
-                            <path d="M22.75,57.75 L22.75,35.25" id="Shape" stroke="#7048E8" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"></path>
-                            <polyline id="Shape" stroke="#7048E8" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" points="45.25 42.75 39 42.75 30.25 52.75"></polyline>
-                        </g>
-                        <g id="Frames-24px">
-                            <rect id="Rectangle-path" x="0" y="0" width="60" height="60"></rect>
-                        </g>
-                    </g>
-                </g>
-            </g>
-        </svg>
-        <div id="thanks">Thanks for voting!</div>
-        <div id="redirect">Redirecting you back in a second.</div>
+      <div id="thanks-container" class="center">
+        <div id="thanks-content" class="center">
+          <svg width="60px" height="60px" viewBox="0 0 60 60" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+              <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                  <g id="Artboard" transform="translate(-325.000000, -310.000000)">
+                      <g id="cat" transform="translate(325.000000, 310.000000)">
+                          <g id="Duotone" transform="translate(1.000000, 1.000000)">
+                              <polygon id="Shape" fill="#FFFFFF" fill-rule="nonzero" points="52.75 34 29.75 21.25 29.75 21.25 35.25 19 35.25 0.25 27.75 5.25 17.75 5.25 10.25 0.25 10.25 19 15.25 21 15.25 57.75 52.75 57.75 57.75 49"></polygon>
+                              <path d="M22.75,24 L15.25,21 L15.25,26 L22.75,29 L35,24 L29.75,21 L22.75,24 Z" id="Shape" fill="#E5DBFF" fill-rule="nonzero"></path>
+                              <path d="M15.25,52.75 L15.25,57.75 L52.75,57.75 L57.75,49 L52.75,49 L50.25,52.75 L15.25,52.75 Z" id="Shape" fill="#E5DBFF" fill-rule="nonzero"></path>
+                              <path d="M17.75,10.25 L17.75,12.75" id="Shape" stroke="#7048E8" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                              <path d="M27.75,10.25 L27.75,12.75" id="Shape" stroke="#7048E8" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                              <polyline id="Shape" stroke="#7048E8" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" points="15.25 57.75 6.5 57.75 0.25 51.5 6.5 42.75 1.5 37.75 5.25 32.75"></polyline>
+                              <polygon id="Shape" stroke="#7048E8" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" points="27.75 5.25 17.75 5.25 10.25 0.25 10.25 19 22.75 24 35.25 19 35.25 0.25"></polygon>
+                              <polyline id="Shape" stroke="#7048E8" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" points="15.25 21 15.25 57.75 52.75 57.75 57.75 49 52.75 34 29.75 21.25"></polyline>
+                              <path d="M30.25,57.75 L30.25,35.25" id="Shape" stroke="#7048E8" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                              <path d="M22.75,57.75 L22.75,35.25" id="Shape" stroke="#7048E8" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                              <polyline id="Shape" stroke="#7048E8" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" points="45.25 42.75 39 42.75 30.25 52.75"></polyline>
+                          </g>
+                          <g id="Frames-24px">
+                              <rect id="Rectangle-path" x="0" y="0" width="60" height="60"></rect>
+                          </g>
+                      </g>
+                  </g>
+              </g>
+            </svg>
+            <div id="thanks">Thanks for voting!</div>
+            <div id="redirect">Redirecting you back in a second.</div>
+        </div>
       </div>
     </div>
     <script>
