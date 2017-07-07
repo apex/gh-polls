@@ -27,7 +27,7 @@ func main() {
 
 // addPoll creates a poll, responds with .id.
 func addPoll(w http.ResponseWriter, r *http.Request) {
-	user := r.Header.Get("X-Real-IP")
+	user := getUser(r)
 
 	var body struct {
 		Options []string `json:"options"`
@@ -56,7 +56,7 @@ func addPoll(w http.ResponseWriter, r *http.Request) {
 func getPollOptionVote(w http.ResponseWriter, r *http.Request) {
 	id := r.URL.Query().Get(":id")
 	option := r.URL.Query().Get(":option")
-	user := r.Header.Get("X-Real-IP")
+	user := getUser(r)
 
 	ctx := log.WithFields(log.Fields{
 		"id":     id,
@@ -149,4 +149,8 @@ func setETag(w http.ResponseWriter, body []byte) {
 	hash.Write(body)
 	etag := hex.EncodeToString(hash.Sum(nil))
 	w.Header().Set("ETag", `w/"`+etag+`"`)
+}
+
+func getUser(r *http.Request) string {
+	return r.Header.Get("X-Forwarded-For")
 }
