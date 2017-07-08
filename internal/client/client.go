@@ -27,7 +27,7 @@ type CreateOutput struct {
 func (c *Client) Create(in *CreateInput) (*CreateOutput, error) {
 	b, err := json.Marshal(in)
 	if err != nil {
-		return nil, errors.Wrap(err, "marshaling input")
+		return nil, errors.Wrap(err, "marshalling input")
 	}
 
 	res, err := http.Post(c.Endpoint+"/poll", "application/json", bytes.NewReader(b))
@@ -40,7 +40,7 @@ func (c *Client) Create(in *CreateInput) (*CreateOutput, error) {
 
 	out := new(CreateOutput)
 	if err := json.NewDecoder(res.Body).Decode(out); err != nil {
-		return nil, errors.Wrap(err, "unmarshaling output")
+		return nil, errors.Wrap(err, "unmarshalling output")
 	}
 
 	return out, nil
