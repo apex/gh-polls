@@ -7,6 +7,7 @@ import (
 
 	"github.com/oklog/ulid"
 	"github.com/pkg/errors"
+	"github.com/tj/aws/dynamo"
 
 	"github.com/aws/aws-sdk-go/aws"
 	"github.com/aws/aws-sdk-go/aws/session"
@@ -52,29 +53,19 @@ func New(user string, options []string) *Poll {
 
 // Create the poll.
 func (p *Poll) Create() error {
-	opts := map[string]*dynamodb.AttributeValue{}
+	item := dynamo.NewItem().
+		String("id", p.ID).
+		String("user", p.User)
+
+	opts := item.Map("options")
 
 	for _, name := range p.options {
-		opts[name] = &dynamodb.AttributeValue{
-			N: aws.String("0"),
-		}
-	}
-
-	item := map[string]*dynamodb.AttributeValue{
-		"id": {
-			S: &p.ID,
-		},
-		"user": {
-			S: &p.User,
-		},
-		"options": {
-			M: opts,
-		},
+		opts.Int(name, 0)
 	}
 
 	_, err := client.PutItem(&dynamodb.PutItemInput{
 		TableName: &table,
-		Item:      item,
+		Item:      item.Attributes(),
 	})
 
 	return err
@@ -98,15 +89,11 @@ func (p *Poll) Remove() error {
 
 // Load the poll.
 func (p *Poll) Load() error {
-	key := map[string]*dynamodb.AttributeValue{
-		"id": {
-			S: &p.ID,
-		},
-	}
+	key := dynamo.NewItem().String("id", p.ID)
 
 	res, err := client.GetItem(&dynamodb.GetItemInput{
 		TableName:      &table,
-		Key:            key,
+		Key:            key.Attributes(),
 		ConsistentRead: aws.Bool(true),
 	})
 
@@ -125,23 +112,12 @@ func (p *Poll) Load() error {
 // If the user has already voted then
 // ErrAlreadyVoted is returned.
 func (p *Poll) Vote(userID, option string) error {
-	key := map[string]*dynamodb.AttributeValue{
-		"id": {
-			S: &p.ID,
-		},
-	}
+	key := dynamo.NewItem().String("id", p.ID)
 
-	vals := map[string]*dynamodb.AttributeValue{
-		":votes": {
-			N: aws.String("1"),
-		},
-		":voter_set": {
-			SS: aws.StringSlice([]string{userID}),
-		},
-		":voter": {
-			S: &userID,
-		},
-	}
+	vals := dynamo.NewItem().
+		Int(":votes", 1).
+		StringSet(":voter_set", []string{userID}).
+		String(":voter", userID)
 
 	names := map[string]*string{
 		"#options": aws.String("options"),
@@ -153,7 +129,7 @@ func (p *Poll) Vote(userID, option string) error {
 		Key:                       key,
 		UpdateExpression:          aws.String(`ADD votes :votes, voters :voter_set SET #options.#option = #options.#option + :votes`),
 		ConditionExpression:       aws.String(`not contains(voters, :voter)`),
-		ExpressionAttributeValues: vals,
+		ExpressionAttributeValues: vals.Attributes(),
 		ExpressionAttributeNames:  names,
 	})
 
