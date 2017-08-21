@@ -48,9 +48,9 @@ $ polls new "Cats are cool" "Dogs are better" "Ferrets for the win"
 
 GitHub poll API statistics powered by [Up](https://github.com/apex/up).
 
-![](https://pi2e413n19.execute-api.us-west-2.amazonaws.com/prod/timeseries/title:Requests)
+![](https://pi2e413n19.execute-api.us-west-2.amazonaws.com/prod/timeseries/start:1w/title:Requests)
 
-![](https://pi2e413n19.execute-api.us-west-2.amazonaws.com/prod/timeseries/title:Latency/metric:Latency/stat:Average/x-suffix:%20ms/max-points:100)
+![](https://pi2e413n19.execute-api.us-west-2.amazonaws.com/prod/timeseries/title:Latency/start:1w/metric:Latency/stat:Average/x-suffix:%20ms/max-points:100)
 
 ---
 
