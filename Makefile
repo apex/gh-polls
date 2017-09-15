@@ -7,6 +7,7 @@ build:
 	  --title "GitHub Polls" \
 		--subtitle "SVG polls you can embed in GitHub issues or readmes." \
 		--in docs
+	@cp install.sh build
 .PHONY: build
 
 # Clean build artifacts.
