@@ -276,7 +276,7 @@ EOF
 
 OWNER=apex
 REPO=gh-polls
-BINARY=polls
+REPO=polls
 FORMAT=tar.gz
 OS=$(uname_os)
 ARCH=$(uname_arch)
@@ -301,7 +301,7 @@ adjust_arch
 
 echo "$PREFIX: found version ${VERSION} for ${OS}/${ARCH}"
 
-NAME=${BINARY}_${VERSION}_${OS}_${ARCH}
+NAME=${REPO}_${VERSION}_${OS}_${ARCH}
 TARBALL=${NAME}.${FORMAT}
 TARBALL_URL=${GITHUB_DOWNLOAD}/v${VERSION}/${TARBALL}
 CHECKSUM=${BINARY}_checksums.txt
