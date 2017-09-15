@@ -5,6 +5,9 @@
   "stages": {
     "production": {
       "domain": "api.gh-polls.com"
+    },
+    "development": {
+      "domain": "dev.gh-polls.com"
     }
   }
 }

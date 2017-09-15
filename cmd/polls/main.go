@@ -14,7 +14,7 @@ import (
 // Config.
 var (
 	version  = "master"
-	endpoint = "https://gh-polls.com"
+	endpoint = "https://api.gh-polls.com"
 )
 
 func main() {

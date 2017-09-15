@@ -2,9 +2,9 @@
 
 User polls for GitHub powered by [Up](https://github.com/apex/up).
 
-[![](https://gh-polls.com/poll/01BM2T00TMSDTZWJ1RP6TQF200/Option%20A)](https://gh-polls.com/poll/01BM2T00TMSDTZWJ1RP6TQF200/Option%20A/vote)
-[![](https://gh-polls.com/poll/01BM2T00TMSDTZWJ1RP6TQF200/Option%20B)](https://gh-polls.com/poll/01BM2T00TMSDTZWJ1RP6TQF200/Option%20B/vote)
-[![](https://gh-polls.com/poll/01BM2T00TMSDTZWJ1RP6TQF200/Option%20C)](https://gh-polls.com/poll/01BM2T00TMSDTZWJ1RP6TQF200/Option%20C/vote)
+[![](https://api.gh-polls.com/poll/01BM2T00TMSDTZWJ1RP6TQF200/Option%20A)](https://api.gh-polls.com/poll/01BM2T00TMSDTZWJ1RP6TQF200/Option%20A/vote)
+[![](https://api.gh-polls.com/poll/01BM2T00TMSDTZWJ1RP6TQF200/Option%20B)](https://api.gh-polls.com/poll/01BM2T00TMSDTZWJ1RP6TQF200/Option%20B/vote)
+[![](https://api.gh-polls.com/poll/01BM2T00TMSDTZWJ1RP6TQF200/Option%20C)](https://api.gh-polls.com/poll/01BM2T00TMSDTZWJ1RP6TQF200/Option%20C/vote)
 
 ## About
 
@@ -30,9 +30,9 @@ Create a new poll for who is the best ferret.
 $ polls new Tobi Loki Jane
 ```
 
-[![](https://gh-polls.com/poll/01BM2ZHFZXYKQV9N3HNFXCBH3N/Tobi)](https://gh-polls.com/poll/01BM2ZHFZXYKQV9N3HNFXCBH3N/Tobi/vote)
-[![](https://gh-polls.com/poll/01BM2ZHFZXYKQV9N3HNFXCBH3N/Loki)](https://gh-polls.com/poll/01BM2ZHFZXYKQV9N3HNFXCBH3N/Loki/vote)
-[![](https://gh-polls.com/poll/01BM2ZHFZXYKQV9N3HNFXCBH3N/Jane)](https://gh-polls.com/poll/01BM2ZHFZXYKQV9N3HNFXCBH3N/Jane/vote)
+[![](https://api.gh-polls.com/poll/01BM2ZHFZXYKQV9N3HNFXCBH3N/Tobi)](https://api.gh-polls.com/poll/01BM2ZHFZXYKQV9N3HNFXCBH3N/Tobi/vote)
+[![](https://api.gh-polls.com/poll/01BM2ZHFZXYKQV9N3HNFXCBH3N/Loki)](https://api.gh-polls.com/poll/01BM2ZHFZXYKQV9N3HNFXCBH3N/Loki/vote)
+[![](https://api.gh-polls.com/poll/01BM2ZHFZXYKQV9N3HNFXCBH3N/Jane)](https://api.gh-polls.com/poll/01BM2ZHFZXYKQV9N3HNFXCBH3N/Jane/vote)
 
 Create a new poll for the best species:
 
@@ -40,9 +40,9 @@ Create a new poll for the best species:
 $ polls new "Cats are cool" "Dogs are better" "Ferrets for the win"
 ```
 
-[![](https://gh-polls.com/poll/01BM2ZHPN7BA19X15SQDGX4D88/Cats%20are%20cool)](https://gh-polls.com/poll/01BM2ZHPN7BA19X15SQDGX4D88/Cats%20are%20cool/vote)
-[![](https://gh-polls.com/poll/01BM2ZHPN7BA19X15SQDGX4D88/Dogs%20are%20better)](https://gh-polls.com/poll/01BM2ZHPN7BA19X15SQDGX4D88/Dogs%20are%20better/vote)
-[![](https://gh-polls.com/poll/01BM2ZHPN7BA19X15SQDGX4D88/Ferrets%20for%20the%20win)](https://gh-polls.com/poll/01BM2ZHPN7BA19X15SQDGX4D88/Ferrets%20for%20the%20win/vote)
+[![](https://api.gh-polls.com/poll/01BM2ZHPN7BA19X15SQDGX4D88/Cats%20are%20cool)](https://api.gh-polls.com/poll/01BM2ZHPN7BA19X15SQDGX4D88/Cats%20are%20cool/vote)
+[![](https://api.gh-polls.com/poll/01BM2ZHPN7BA19X15SQDGX4D88/Dogs%20are%20better)](https://api.gh-polls.com/poll/01BM2ZHPN7BA19X15SQDGX4D88/Dogs%20are%20better/vote)
+[![](https://api.gh-polls.com/poll/01BM2ZHPN7BA19X15SQDGX4D88/Ferrets%20for%20the%20win)](https://api.gh-polls.com/poll/01BM2ZHPN7BA19X15SQDGX4D88/Ferrets%20for%20the%20win/vote)
 
 ## Statistics
 
