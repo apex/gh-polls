@@ -1,10 +1,10 @@
 {
   "name": "gh-polls",
-  "description": "GitHub polls.",
+  "description": "GitHub polls API.",
   "cors": {},
   "stages": {
     "production": {
-      "domain": "gh-polls.com"
+      "domain": "api.gh-polls.com"
     }
   }
 }
