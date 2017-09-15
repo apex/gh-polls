@@ -13,5 +13,14 @@
     "production": {
       "domain": "gh-polls.com"
     }
+  },
+  "dns": {
+    "gh-polls.com": [
+      {
+        "name": "app.gh-polls.com",
+        "type": "CNAME",
+        "value": ["gh-polls.netlify.com"]
+      }
+    ]
   }
 }
