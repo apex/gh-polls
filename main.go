@@ -11,7 +11,7 @@ import (
 	"github.com/gohttp/response"
 	"github.com/segmentio/go-env"
 
-	"github.com/tj/gh-polls/internal/poll"
+	"github.com/apex/gh-polls/internal/poll"
 )
 
 func main() {
@@ -19,7 +19,7 @@ func main() {
 	app.Post("/poll", http.HandlerFunc(addPoll))
 	app.Get("/poll/:id/:option", http.HandlerFunc(getPollOption))
 	app.Get("/poll/:id/:option/vote", http.HandlerFunc(getPollOptionVote))
-	addr := env.MustGet("UP_ADDR")
+	addr := ":" + env.MustGet("PORT")
 	if err := http.ListenAndServe(addr, app); err != nil {
 		log.WithError(err).Fatal("binding")
 	}

@@ -7,14 +7,14 @@ import (
 
 	"github.com/tj/kingpin"
 
-	"github.com/tj/gh-polls/internal/cli"
-	"github.com/tj/gh-polls/internal/client"
+	"github.com/apex/gh-polls/internal/cli"
+	"github.com/apex/gh-polls/internal/client"
 )
 
 // Config.
 var (
 	version  = "master"
-	endpoint = "https://m131jyck4m.execute-api.us-west-2.amazonaws.com/prod"
+	endpoint = "https://gh-polls.com"
 )
 
 func main() {
