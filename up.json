@@ -8,5 +8,10 @@
   "hooks": {
     "build": "make build",
     "clean": "make clean"
+  },
+  "stages": {
+    "production": {
+      "domain": "gh-polls.com"
+    }
   }
 }
