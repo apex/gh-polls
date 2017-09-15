@@ -1,0 +1,12 @@
+{
+  "name": "gh-polls-site",
+  "description": "GitHub polls site.",
+  "type": "static",
+  "static": {
+    "dir": "build"
+  },
+  "hooks": {
+    "build": "make build",
+    "clean": "make clean"
+  }
+}
