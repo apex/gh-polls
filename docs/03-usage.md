@@ -2,7 +2,7 @@
 title: Usage
 ---
 
-Polls can be created via the `polls` command-line tool, or via the [web application](http://gh-polls.netlify.com/).
+Polls can be created via the `polls` command-line tool, or via the [web application](https://app.gh-polls.com/).
 
 Creating a poll with the command-line takes a single command. After which the Markdown poll options are copied to your clipboard automatically and ready to paste in the GitHub issue or readme!
 

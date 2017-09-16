@@ -10,7 +10,7 @@ User polls for GitHub powered by [Up](https://github.com/apex/up).
 
 These polls work by pasting individual markdown SVG images into your issue, each wrapped with a link that tracks a vote. A single vote per IP is allowed for a given poll, which are stored in DynamoDB.
 
-What do they look like? The poll above is live, click one out and give it a try! You can create your own [online](http://gh-polls.netlify.com/) or via the `polls` CLI.
+What do they look like? The poll above is live, click one out and give it a try! You can create your own [online](https://app.gh-polls.com/) or via the `polls` CLI.
 
 ## Installation
 
