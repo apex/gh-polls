@@ -2,7 +2,7 @@
 title: Usage
 ---
 
-Polls can be created via the `polls` command-line tool, or via the [web application](https://app.gh-polls.com/).
+Polls can be created via the `polls` command-line tool, via the [web application](https://app.gh-polls.com/), or install the [GitHub App](https://github.com/apps/polls) in your repository.
 
 Creating a poll with the command-line takes a single command. After which the Markdown poll options are copied to your clipboard automatically and ready to paste in the GitHub issue or readme!
 
