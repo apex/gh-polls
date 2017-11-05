@@ -50,12 +50,6 @@
   version = "v1.28.0"
 
 [[projects]]
-  name = "github.com/gohttp/response"
-  packages = ["."]
-  revision = "7dbb789231fb9752c748babb9c9bd82f4c7014be"
-  version = "v1.2.0"
-
-[[projects]]
   name = "github.com/jmespath/go-jmespath"
   packages = ["."]
   revision = "3433f3ea46d9f8019119e7dd41274e112a2359a9"
@@ -98,6 +92,12 @@
   revision = "748ebc778a698c0df0eb9855caf3ef677ed99471"
 
 [[projects]]
+  name = "github.com/tj/go"
+  packages = ["http/response"]
+  revision = "e0123f1a604cfd5f49721128fd89169ae277e181"
+  version = "v1.4.0"
+
+[[projects]]
   name = "github.com/tj/kingpin"
   packages = ["."]
   revision = "d6b8de5b4f82b66c36cdd6ca6e1361f042d35804"
@@ -106,6 +106,6 @@
 [solve-meta]
   analyzer-name = "dep"
   analyzer-version = 1
-  inputs-digest = "5d9dc9052bce4203fd0555534339ad8b872b832565826654e2510e8d7b953452"
+  inputs-digest = "5d9b0d1932b37a7cc3071ee3cb131ff9e015d7fb2c249ee62a6de3ef1da779da"
   solver-name = "gps-cdcl"
   solver-version = 1

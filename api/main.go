@@ -8,8 +8,8 @@ import (
 
 	"github.com/apex/log"
 	"github.com/bmizerany/pat"
-	"github.com/gohttp/response"
 	"github.com/segmentio/go-env"
+	"github.com/tj/go/http/response"
 
 	"github.com/apex/gh-polls/internal/poll"
 )
