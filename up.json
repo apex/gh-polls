@@ -22,5 +22,8 @@
         "value": ["gh-polls.netlify.com"]
       }
     ]
+  },
+  "error_pages": {
+    "enable": true
   }
 }
