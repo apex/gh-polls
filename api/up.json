@@ -1,5 +1,5 @@
 {
-  "name": "gh-polls",
+  "name": "gh-polls-api",
   "description": "GitHub polls API.",
   "cors": {
     "enable": true
