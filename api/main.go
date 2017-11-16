@@ -4,6 +4,7 @@ import (
 	"crypto/md5"
 	"encoding/hex"
 	"encoding/json"
+	"fmt"
 	"net/http"
 
 	"github.com/apex/log"
@@ -16,6 +17,7 @@ import (
 
 func main() {
 	app := pat.New()
+	app.Get("/_health", http.HandlerFunc(health))
 	app.Post("/poll", http.HandlerFunc(addPoll))
 	app.Get("/poll/:id/:option", http.HandlerFunc(getPollOption))
 	app.Get("/poll/:id/:option/vote", http.HandlerFunc(getPollOptionVote))
@@ -153,4 +155,8 @@ func setETag(w http.ResponseWriter, body []byte) {
 
 func getUser(r *http.Request) string {
 	return r.Header.Get("X-Forwarded-For")
+}
+
+func health(w http.ResponseWriter, r *http.Request) {
+	fmt.Fprintln(w, ":)")
 }
