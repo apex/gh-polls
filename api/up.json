@@ -23,7 +23,7 @@
     {
       "metric": "http.count",
       "statistic": "sum",
-      "threshold": 100,
+      "threshold": 200,
       "action": "email.backend"
     },
     {
