@@ -70,6 +70,7 @@ func getPollOptionVote(w http.ResponseWriter, r *http.Request) {
 		ID: id,
 	}
 
+	ctx.Info("vote")
 	err := p.Vote(user, option)
 
 	if err == poll.ErrAlreadyVoted {
@@ -101,6 +102,7 @@ func getPollOption(w http.ResponseWriter, r *http.Request) {
 		ID: id,
 	}
 
+	ctx.Info("load poll option")
 	if err := p.Load(); err != nil {
 		ctx.WithError(err).Error("loading poll")
 		response.InternalServerError(w, "Error loading poll.")

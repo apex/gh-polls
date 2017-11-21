@@ -11,5 +11,33 @@
     "development": {
       "domain": "dev.gh-polls.com"
     }
-  }
+  },
+  "actions": [
+    {
+      "name": "email.backend",
+      "type": "email",
+      "emails": ["tj@apex.sh"]
+    }
+  ],
+  "alerts": [
+    {
+      "metric": "http.count",
+      "statistic": "sum",
+      "threshold": 100,
+      "action": "email.backend"
+    },
+    {
+      "metric": "http.5xx",
+      "statistic": "sum",
+      "threshold": 5,
+      "action": "email.backend"
+    },
+    {
+      "metric": "http.latency",
+      "statistic": "avg",
+      "threshold": 1000,
+      "period": "5m",
+      "action": "email.backend"
+    }
+  ]
 }
