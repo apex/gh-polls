@@ -35,7 +35,7 @@
     {
       "metric": "http.latency",
       "statistic": "avg",
-      "threshold": 1000,
+      "threshold": 2000,
       "period": "5m",
       "action": "email.backend"
     }
