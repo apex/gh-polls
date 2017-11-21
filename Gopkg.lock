@@ -16,7 +16,7 @@
 [[projects]]
   branch = "master"
   name = "github.com/apex/log"
-  packages = ["."]
+  packages = [".","handlers/json"]
   revision = "8f3a15d95392c8fc202d1e1059f46df21dff2992"
 
 [[projects]]
@@ -106,6 +106,6 @@
 [solve-meta]
   analyzer-name = "dep"
   analyzer-version = 1
-  inputs-digest = "5d9b0d1932b37a7cc3071ee3cb131ff9e015d7fb2c249ee62a6de3ef1da779da"
+  inputs-digest = "8f252a6cc95e670f8701dc5fac36ccfb894479b6f50964dbf561eeacfebf1a64"
   solver-name = "gps-cdcl"
   solver-version = 1
