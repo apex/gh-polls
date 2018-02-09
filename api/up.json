@@ -7,9 +7,6 @@
   "stages": {
     "production": {
       "domain": "api.gh-polls.com"
-    },
-    "staging": {
-      "domain": "dev.gh-polls.com"
     }
   },
   "actions": [
