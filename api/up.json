@@ -8,7 +8,7 @@
     "production": {
       "domain": "api.gh-polls.com"
     },
-    "development": {
+    "staging": {
       "domain": "dev.gh-polls.com"
     }
   },
