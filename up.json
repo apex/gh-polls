@@ -5,6 +5,9 @@
   "static": {
     "dir": "build"
   },
+  "lambda": {
+    "warm": true
+  },
   "hooks": {
     "build": "make build",
     "clean": "make clean"
