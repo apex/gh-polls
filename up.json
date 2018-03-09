@@ -5,16 +5,16 @@
   "static": {
     "dir": "build"
   },
-  "lambda": {
-    "warm": true
-  },
   "hooks": {
     "build": "make build",
     "clean": "make clean"
   },
   "stages": {
     "production": {
-      "domain": "gh-polls.com"
+      "domain": "gh-polls.com",
+      "lambda": {
+        "warm": true
+      }
     }
   },
   "dns": {

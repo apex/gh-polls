@@ -4,12 +4,12 @@
   "cors": {
     "enable": true
   },
-  "lambda": {
-    "warm": true
-  },
   "stages": {
     "production": {
-      "domain": "api.gh-polls.com"
+      "domain": "api.gh-polls.com",
+      "lambda": {
+        "warm": true
+      }
     }
   },
   "actions": [
